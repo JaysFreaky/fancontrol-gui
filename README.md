@@ -7,7 +7,7 @@ Follow the steps below to use in a flake-enabled environment:
 Inside your flake.nix file, add the following to your inputs:
 
 ```nix
-inputs.framework-laptop.url = "github:JaysFreaky/fancontrol-gui";
+inputs.fancontrol-gui.url = "github:JaysFreaky/fancontrol-gui";
 ```
 
 ## 02. Add package variable
