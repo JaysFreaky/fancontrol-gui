@@ -11,7 +11,7 @@
   in {
     apps.fancontrol-gui = eachSystem (system: {
       type = "app";
-      program = "${nixpkgs.lib.getExe' self.packages.${system}.fancontrol-gui "fancontrol_gui"}";
+      program = "${nixpkgs.lib.getExe self.packages.${system}.fancontrol-gui}";
     });
 
     packages = eachSystem (system: rec {
