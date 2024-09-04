@@ -9,14 +9,14 @@
   outputs = { self, nixpkgs, systems }: let
     eachSystem = nixpkgs.lib.genAttrs (import systems);
   in {
-    apps.fancontrol-gui = eachSystem (system: {
+    apps.fancontrol_gui = eachSystem (system: {
       type = "app";
-      program = "${nixpkgs.lib.getExe self.packages.${system}.fancontrol-gui}";
+      program = "${nixpkgs.lib.getExe self.packages.${system}.fancontrol_gui}";
     });
 
     packages = eachSystem (system: rec {
-      default = fancontrol-gui;
-      fancontrol-gui = nixpkgs.legacyPackages.${system}.callPackage ./fancontrol.nix { };
+      default = fancontrol_gui;
+      fancontrol_gui = nixpkgs.legacyPackages.${system}.callPackage ./fancontrol.nix { };
     });
   };
 }

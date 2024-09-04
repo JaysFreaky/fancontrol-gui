@@ -9,7 +9,7 @@
 }:
 
 stdenv.mkDerivation rec {
-  pname = "fancontrol-gui";
+  pname = "fancontrol_gui";
   version = "0.8";
 
   src = fetchFromGitHub {
@@ -50,10 +50,6 @@ stdenv.mkDerivation rec {
     "-DBUILD_KCM=on"
     "-DBUILD_PLASMOID=on"
   ];
-
-  postFixup = ''
-    mv $out/bin/fancontrol_gui $out/bin/fancontrol-gui
-  '';
 
   meta = {
     homepage = "https://github.com/Maldela/fancontrol-gui";
